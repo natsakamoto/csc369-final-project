@@ -1,11 +1,3 @@
----
-title: "writeup 369"
-output: html_document
-editor_options: 
-  markdown: 
-    wrap: 72
----
-
 # Do Verified Purchases and Review Detail Predict Helpfulness on Amazon?
 
 **Author:** Natalie Sakamoto
@@ -23,16 +15,17 @@ potential buyers more information so they are more likely to mark
 ### Variables of interest
 
 **Outcome variable (target):**\
--`helpful_votes`: Number of times review was marked as “helpful” (int)
+\-`helpful_votes`: Number of times review was marked as “helpful” (int)
 
 **Predictors:**\
-– `verified_purchase`: Whether the reviewer purchased the item (binary)
+\- `verified_purchase`: Whether the reviewer purchased the item (binary)
 
 \- review detail measured as `review_body_word_count` (int), modeled as
 `log_review_words = ln(1 + review_body_word_count)`
 
-**Controls:**\
-- `star_rating` : Rating the reviewer gave the product from 0 - 5
+**Controls:**
+
+\- `star_rating` : Rating the reviewer gave the product from 0 - 5
 (categorical)
 
 \- `product_category` : Category of the product (categorical)
@@ -55,10 +48,10 @@ I used Amazon reviews data from 2012-2013 stored in Parquet format
 (originally \~18 GB). The dataset I performed analysis on was filtered
 to five categories that I frequently shop in (46 MB parquet):
 
--   Apparel\
--   Beauty\
--   Jewelry\
--   Video Games\
+-   Apparel
+-   Beauty
+-   Jewelry
+-   Video Games
 -   Health & Personal Care
 
 I only kept reviews with `total_votes > 0` for modeling, since the
@@ -96,7 +89,8 @@ higher placed orange 50 percentile line for verified reviews.
 ### Figure 3 - Review detail is skewed and longer reviews tend to be more helpful
 
 !["helpfulness rate vs. review length
-bins"](fig3_helpful_ratio_wordbins.png) As word count increases, there
+bins"](fig3_helpful_ratio_wordbins.png) 
+As word count increases, there
 is an increase in mean helpfulness ratio (before controlling for
 rating/category/time).
 
