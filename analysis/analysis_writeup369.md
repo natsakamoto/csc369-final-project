@@ -2,6 +2,8 @@
 
 **Author:** Natalie Sakamoto
 
+As an avid shopper, I spend a lot on Amazon, from karaoke machines to beanies, I’ll buy it all. It’s important to me that I’m purchasing the best possible item, and so i read the reviews. Understanding what is considered “helpful” is useful because customers want to find trustworthy reviews quicker, Amazon wants a better review ranking system, and sellers want to know what information customers value.
+
 ## 1. Hypothesis
 
 **Hypothesis:** Reviews that are verified purchases and have more
