@@ -116,14 +116,7 @@ I modeled helpful votes as a count outcome using a Negative Binomial
 generalized linear model (GLM) with a log link:
 
 $$
-\log(E[\text{helpful_votes}]) =
-\beta_0
-+ \beta_1(\text{verified})
-+ \beta_2(\log(1+\text{review words}))
-+ \gamma(\text{star rating})
-+ \delta(\text{category})
-+ \tau(\text{month})
-+ \log(\text{total votes})
+\log(E[\text{helpful_votes}]) = \beta_0 + \beta_1(\text{verified}) + \beta_2(\log(1+\text{review words})) + \gamma(\text{star rating}) + \delta(\text{category}) + \tau(\text{month}) + \log(\text{total votes})
 $$
 
 The offset $\log(\text{total votes})$ makes interpretation closer to
