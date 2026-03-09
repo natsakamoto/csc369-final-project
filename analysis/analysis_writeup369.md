@@ -35,6 +35,8 @@ potential buyers more information so they are more likely to mark
 \- `review_date` : Month and Year of the review (modeled as month fixed
 effects: `ym = YYYY-MM`)
 
+I choose to use star rating, product category, and review date as control variables because they can affect helpful votes independently of my main variables of interest (and I'm tyring to isolate the relationship between purchase status and review detail with review helpfulness).
+
 **Note:** I used an offset for `log(total_votes)` so the model can
 compare reviews fairly (modeling the expected helpful votes per unit of
 total votes (helpfulness rate) while automatically weighting reviews
