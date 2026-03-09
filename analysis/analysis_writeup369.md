@@ -115,16 +115,25 @@ over time.
 I modeled helpful votes as a count outcome using a Negative Binomial
 generalized linear model (GLM) with a log link:
 
-$$
-\log(E[\text{helpful_votes}]) = \beta_0 + \beta_1(\text{verified}) + \beta_2(\log(1+\text{review words})) + \gamma(\text{star rating}) + \delta(\text{category}) + \tau(\text{month}) + \log(\text{total votes})
-$$
+```math
+\log\!\left(E[\text{helpful\_votes}]\right)
+=
+\beta_0
++ \beta_1(\text{verified})
++ \beta_2\!\left(\log(1+\text{review\_words})\right)
++ \gamma(\text{star\_rating})
++ \delta(\text{category})
++ \tau(\text{month})
++ \log(\text{total\_votes})
+```
+
 
 The offset $\log(\text{total votes})$ makes interpretation closer to
 helpfulness rate per vote exposure.
 
 #### Equation Term Definitions
 
-$E[\text{helpful_votes}]$: the expected average number of helpful votes
+E[helpful votes]: the expected average number of helpful votes
 the model predicts for a review based on it's features
 
 $\beta_0$ (intercept): the baseline log-expected helpful votes for the
