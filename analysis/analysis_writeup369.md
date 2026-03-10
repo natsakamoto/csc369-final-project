@@ -48,7 +48,7 @@ with more votes more heavily)
 
 ### 2.1 Source and scope
 
-I used Amazon reviews data from 2012-2013 stored in Parquet format
+I used [Amazon review data](https://clickhouse.com/docs/getting-started/example-datasets/amazon-reviews?utm_source=chatgpt.com#loading-the-dataset) from 2012-2013 stored in Parquet format
 (originally \~18 GB). The dataset I performed analysis on was filtered
 to five categories that I frequently shop in (46 MB parquet):
 
@@ -223,7 +223,15 @@ found:
 -   Verified purchase reviews have higher expected helpful votes
 -   More detailed reviews have higher expected helpful votes
 
+Since I only focused on Amazon review data from select categories (Apparel, Beauty, Jewelry, Video Games, Health & Personal Care) I can only generalize within this sector. 
+
 **Takeaway:** Verified purchase status matters, but review detail
 matters more. Being a verified purchaser accounts for a small increase,
 while increasing review informativeness has a larger association with
 helpfulness.
+
+**Application:** 
+Knowing that customers value indepth and verfied reviews, Amazon could implement a incetivisor for buyers to leave reviews, such as points towards store credit or cupons for every review left. They could also redesign their user interface to encourage users to leave more detailed reviews or prompting them to leave a review after their item has been delivered. Based of the qualities of review Amazon could also implent ranking, so more helpful reviews will be displayed first. 
+
+For Amazon, this could improve the shopping experience and lead customers to have increased trust with the company due to better, more well-informed purchases. Long term, it could mean reduced returns and higher customer satisfaction.  
+
