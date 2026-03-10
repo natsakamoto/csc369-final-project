@@ -2,7 +2,7 @@
 
 **Author:** Natalie Sakamoto
 
-As an avid shopper, I spend a lot on Amazon, from karaoke machines to beanies, I’ll buy it all. It’s important to me that I’m purchasing the best possible item, and so i read the reviews. Understanding what is considered “helpful” is useful because customers want to find trustworthy reviews quicker, Amazon wants a better review ranking system, and sellers want to know what information customers value.
+As an avid shopper, I spend a lot on Amazon, from karaoke machines to beanies, I’ll buy it all. It’s important to me that I’m purchasing the best possible item, and so I read the reviews. Understanding what is considered “helpful” is useful because customers want to find trustworthy reviews quicker, Amazon wants a better review ranking system, and sellers want to know what information customers value.
 
 ## 1. Hypothesis
 
@@ -37,7 +37,7 @@ effects: `ym = YYYY-MM`)
 
 I choose to use star rating, product category, and review date as control variables because they can affect helpful votes independently of my main variables of interest (and I'm tyring to isolate the relationship between purchase status and review detail with review helpfulness).
 
-**Note:** I used an offset for `log(total_votes)` so the model can
+**Note:** I used an offset, `log(total_votes)`, so the model can
 compare reviews fairly (modeling the expected helpful votes per unit of
 total votes (helpfulness rate) while automatically weighting reviews
 with more votes more heavily)
@@ -153,7 +153,7 @@ $\tau$: a set of coefficients for each month bucket
 
 I used robust standard errors (HC3) and tested two one-sided hypotheses:
 
-1. $H_{0}: \beta_1 = \beta_{\text{verified}} = 0$ (verified reviews does not have an effect on helpful votes)
+1. $H_{0}: \beta_1 = \beta_{\text{verified}} = 0$ (verified reviews do not have an effect on helpful votes)
    
    $H_{a}: \beta_1 = \beta_{\text{verified}} > 0$ (verified reviews do get more helpful votes)
    
@@ -182,7 +182,7 @@ IRR in this context can be interpreted as the multiplicative change in the expec
 -   `log_review_words`: **β = 0.0715**, IRR = **1.0742**
 
 Both were highly statistically significant (z = 31 and z = 208 and the
-p-values were effectively 0). This means we reject the null hypotheis in favor of the alternative There is statistically significant evidence that both verified purchase status and length of review increase the helpfulness rate of a review. 
+p-values were effectively 0). This means we reject the null hypotheis in favor of the alternative. There is statistically significant evidence that both verified purchase status and length of review increase the helpfulness rate of a review (this was expected since sample size is very large). 
 
 ### 5.2 Interpretations (effect sizes)
 
