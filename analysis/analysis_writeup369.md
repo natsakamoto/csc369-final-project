@@ -126,8 +126,7 @@ generalized linear model (GLM) with a log link:
 ```
 
 
-The offset $\log(\text{total votes})$ makes interpretation closer to
-helpfulness rate per vote exposure.
+The offset $\log(\text{total votes})$ ajusts for the idea that reviews with more total votes may have more opportunity to have more helpful votes. By using this adjustment the coefficients can be interpreted as effects on helpfulness _rate_ rather than raw helpful vote totals. 
 
 #### Equation Term Definitions
 
@@ -152,20 +151,24 @@ $\tau$: a set of coefficients for each month bucket
 
 ### 4.2 Inference
 
-I used robust standard errors (HC3) and tested one-sided hypotheses:
+I used robust standard errors (HC3) and tested two one-sided hypotheses:
 
--   $H_{1}: \beta_1 = \beta_{\text{verified}} > 0$ (verified reviews get
-    more helpful votes)
--   $H_{2}: \beta_2 = \beta_{\text{detail}} > 0$ (longer reviews get
-    more helpful votes)
+1. $H_{0}: \beta_1 = \beta_{\text{verified}} = 0$ (verified reviews does not have an effect on helpful votes)
+   
+   $H_{a}: \beta_1 = \beta_{\text{verified}} > 0$ (verified reviews do get more helpful votes)
+   
+3. $H_{a}: \beta_2 = \beta_{\text{detail}} = 0$ (longer reviews do not have an effect on helpful votes)
+   
+   $H_{a}: \beta_2 = \beta_{\text{detail}} > 0$ (longer reviews get more helpful votes)
 
-Since the dataset is large, statistical significance is expected for
-even for small effects, so I will measure effect sizes using **IRRs**
+Since the dataset is large, statistical significance is expected for small effects, and every coeffcient is on the log scale, I will measure effect sizes using **IRRs**
 (incidence rate ratios), where:
 
 $$
 IRR = e^{\beta}
 $$
+
+IRR in this context can be interpreted as the multiplicative change in the expected helpfulness rate for a one unit increase in the predictors, holding all other variables constant.
 
 ------------------------------------------------------------------------
 
@@ -179,9 +182,9 @@ $$
 -   `log_review_words`: **β = 0.0715**, IRR = **1.0742**
 
 Both were highly statistically significant (z = 31 and z = 208 and the
-p-values were effectively 0).
+p-values were effectively 0). This means we reject the null hypotheis in favor of the alternative There is statistically significant evidence that both verified purchase status and length of review increase the helpfulness rate of a review. 
 
-### 5.2 Interpretation (effect sizes)
+### 5.2 Interpretations (effect sizes)
 
 **Effect of verified purchase:**\
 IRR = 1.0224: Verified purchase reviews receive about 2.24% more helpful
@@ -196,7 +199,7 @@ $$  \exp(0.0715 \cdot \ln(2)) \approx 1.05$$
 This means that there are 5% more helpful votes for doubling word count
 (holding controls constant).
 
-Note: Because detail is log-transformed it is easier to interpret as
+Note: Because review length is log-transformed it is easier to interpret as
 proportional increases.
 
 ### 5.3 Controls 
