@@ -48,7 +48,7 @@ with more votes more heavily)
 
 ### 2.1 Source and scope
 
-I used [Amazon review data](https://clickhouse.com/docs/getting-started/example-datasets/amazon-reviews?utm_source=chatgpt.com#loading-the-dataset) from 2012-2013 stored in Parquet format
+I used [Amazon review data](https://clickhouse.com/docs/getting-started/example-datasets/amazon-reviews?utm_source=chatgpt.com#loading-the-dataset) from 2010-2013 stored in Parquet format
 (originally \~18 GB). The dataset I performed analysis on was filtered
 to five categories that I frequently shop in (46 MB parquet):
 
