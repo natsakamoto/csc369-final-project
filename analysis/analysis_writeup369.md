@@ -126,7 +126,7 @@ generalized linear model (GLM) with a log link:
 ```
 
 
-The offset $\log(\text{total votes})$ ajusts for the idea that reviews with more total votes may have more opportunity to have more helpful votes. By using this adjustment the coefficients can be interpreted as effects on helpfulness _rate_ rather than raw helpful vote totals. 
+The offset $\log(\text{total votes})$ adjusts for the idea that reviews with more total votes may have more opportunity to have more helpful votes. By using this adjustment the coefficients can be interpreted as effects on helpfulness _rate_ rather than raw helpful vote totals. 
 
 #### Equation Term Definitions
 
@@ -231,7 +231,7 @@ while increasing review informativeness has a larger association with
 helpfulness.
 
 **Application:** 
-Knowing that customers value indepth and verfied reviews, Amazon could implement a incetivisor for buyers to leave reviews, such as points towards store credit or cupons for every review left. They could also redesign their user interface to encourage users to leave more detailed reviews or prompting them to leave a review after their item has been delivered. Based of the qualities of review Amazon could also implent ranking, so more helpful reviews will be displayed first. 
+Knowing that customers value in depth and verified reviews, Amazon could implement a incentivizes for buyers to leave reviews, such as points towards store credit or cupons for every review left. They could also redesign their user interface to encourage users to leave more detailed reviews or prompting them to leave a review after their item has been delivered. Based of the qualities of review Amazon could also implement ranking, so more helpful reviews will be displayed first. 
 
 For Amazon, this could improve the shopping experience and lead customers to have increased trust with the company due to better, more well-informed purchases. Long term, it could mean reduced returns and higher customer satisfaction.  
 
